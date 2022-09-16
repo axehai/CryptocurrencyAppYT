@@ -1,8 +1,6 @@
 package com.plcoding.cryptocurrencyappyt.domain.use_case.get_coin
 
 import com.plcoding.cryptocurrencyappyt.common.Resource
-import com.plcoding.cryptocurrencyappyt.data.remote.dto.CoinDetailDto
-import com.plcoding.cryptocurrencyappyt.data.remote.dto.toCoin
 import com.plcoding.cryptocurrencyappyt.data.remote.dto.toCoinDetail
 import com.plcoding.cryptocurrencyappyt.domain.model.CoinDetail
 import com.plcoding.cryptocurrencyappyt.domain.repository.CoinRepository
