@@ -2,6 +2,7 @@ package com.plcoding.cryptocurrencyappyt.domain.use_case.get_coin
 
 import com.plcoding.cryptocurrencyappyt.common.Resource
 import com.plcoding.cryptocurrencyappyt.data.remote.dto.toCoinDetail
+import com.plcoding.cryptocurrencyappyt.domain.model.Coin
 import com.plcoding.cryptocurrencyappyt.domain.model.CoinDetail
 import com.plcoding.cryptocurrencyappyt.domain.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow
@@ -15,13 +16,13 @@ class GetCoinDetailUseCase @Inject constructor(
 ) {
     operator fun invoke(coinId: String): Flow<Resource<CoinDetail>> = flow {
         try {
-            emit(Resource.Loading())
+            emit(Resource.Loading<CoinDetail>())
             val coin = repository.getCoinById(coinId).toCoinDetail()
-            emit(Resource.Success(coin))
+            emit(Resource.Success<CoinDetail>(coin))
         } catch (e: HttpException) {
-            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred"))
+            emit(Resource.Error<CoinDetail>(e.localizedMessage ?: "An unexpected error occurred"))
         } catch (e: IOException) {
-            emit(Resource.Error("Couldn't reach servers, check your internet connection"))
+            emit(Resource.Error<CoinDetail>("Couldn't reach servers, check your internet connection"))
         }
     }
 }
