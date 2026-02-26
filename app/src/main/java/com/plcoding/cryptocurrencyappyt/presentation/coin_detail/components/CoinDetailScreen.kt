@@ -16,7 +16,6 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.google.accompanist.flowlayout.FlowRow
 import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.CoinDetailViewModel
 
 @Composable
@@ -67,8 +66,8 @@ fun CoinDetailScreen(
                     Spacer(modifier = Modifier.height(15.dp))
 
                     FlowRow(
-                        mainAxisSpacing = 10.dp,
-                        crossAxisSpacing = 10.dp,
+                        horizontalArrangement = Arrangement.spacedBy(10.dp),
+                        verticalArrangement = Arrangement.spacedBy(10.dp),
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         coin.tags.forEach { tag ->
