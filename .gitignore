@@ -1,15 +1,57 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+# --- OS / junk ---
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+Thumbs.db
+
+# --- Gradle ---
+.gradle/
+**/build/
+build/
 local.properties
+
+# --- IntelliJ / Android Studio ---
+.idea/
+*.iml
+
+# If you want to keep selected shared IDE settings instead of ignoring all .idea/,
+# use the block below instead of ".idea/" above:
+# .idea/*
+# !.idea/codeStyles/
+# !.idea/codeStyles/Project.xml
+# !.idea/inspectionProfiles/
+# !.idea/runConfigurations/
+
+# --- Kotlin / Java ---
+*.class
+out/
+
+# --- Android generated ---
+captures/
+.externalNativeBuild/
+.cxx/
+.navigation/
+lint/intermediates/
+lint/generated/
+outputs/
+generated/
+
+# --- Signing / secrets ---
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+firebase-service-account*.json
+*.pem
+*.key
+
+# --- Native / NDK ---
+obj/
+
+# --- Logs ---
+*.log
+
+# --- Mac / editor swap ---
+*.swp
+*.swo
+
+# --- KMP / Compose Desktop leftovers if ever added ---
+.compose/
